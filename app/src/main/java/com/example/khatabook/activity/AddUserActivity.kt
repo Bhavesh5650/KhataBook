@@ -47,6 +47,8 @@ class AddUserActivity : AppCompatActivity() {
             val model = BookEntity(userName = userName, userMobile = userMobile)
 
             initBookDB(this).userDAO().userInsert(model)
+
+            finish()
         }
     }
 }

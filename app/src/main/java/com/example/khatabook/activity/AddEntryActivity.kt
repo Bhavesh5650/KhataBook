@@ -1,6 +1,9 @@
 package com.example.khatabook.activity
 
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -30,6 +33,21 @@ class AddEntryActivity : AppCompatActivity() {
 
         setSpinner()
         insertEntry()
+
+        binding.spinner2.onItemSelectedListener= object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                Toast.makeText(this@AddEntryActivity, "${list[position].userId}", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                Toast.makeText(this@AddEntryActivity, "Nothing Select", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun setSpinner()
@@ -37,6 +55,10 @@ class AddEntryActivity : AppCompatActivity() {
         list = initBookDB(this).userDAO().userRead()
         val spinnerAdapter = SpinnerAdapter(list)
         binding.spinner2.adapter = spinnerAdapter
+
+        binding.entryBackBtn.setOnClickListener {
+            finish()
+        }
     }
 
     private fun insertEntry()
@@ -51,6 +73,8 @@ class AddEntryActivity : AppCompatActivity() {
             val productEntity = ProductEntity(proName = proName, proQuantity = proQuantity, proPrice = proPrice, proTotalAmount = totalAmount)
 
             initBookDB(this).userDAO().productInsert(productEntity)
+
+            finish()
         }
     }
 }

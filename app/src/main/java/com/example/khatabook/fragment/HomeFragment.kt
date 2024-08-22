@@ -9,12 +9,17 @@ import android.view.ViewGroup
 import com.example.khatabook.R
 import com.example.khatabook.activity.AddEntryActivity
 import com.example.khatabook.activity.AddUserActivity
+import com.example.khatabook.adapter.ProductEntryAdapter
 import com.example.khatabook.databinding.ActivityMainBinding
 import com.example.khatabook.databinding.FragmentHomeBinding
+import com.example.khatabook.helper.BookHelper.Companion.initBookDB
+import com.example.khatabook.model.ProductEntity
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
+    var productEntryAdapter:ProductEntryAdapter?=null
+    var entryList = mutableListOf<ProductEntity>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +29,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
         initIntentOnClick()
+        setTransactionAdapter()
 
         return binding.root
     }
@@ -39,6 +45,18 @@ class HomeFragment : Fragment() {
             val intent = Intent(context,AddEntryActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun setTransactionAdapter()
+    {
+        productEntryAdapter = ProductEntryAdapter(entryList)
+        binding.transactionRecyclerView.adapter = productEntryAdapter
+    }
+
+    override fun onResume() {
+        entryList = initBookDB(requireContext()).userDAO().productRead()
+        productEntryAdapter!!.dataChangeEntry(entryList)
+        super.onResume()
     }
 
 }
