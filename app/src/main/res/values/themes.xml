@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.KhataBook" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:fontFamily">@font/lato_regular</item>
+    </style>
+
+    <style name="Theme.KhataBook" parent="Base.Theme.KhataBook" />
+    
+    <style name="iconTheme">
+        <item name="tint">#000000</item>
+    </style>
+
+    <style name="backShape">
+        <item name="android:backgroundTint">#27000000</item>
+    </style>
+
+    <style name="redLinearTheme">
+        <item name="android:background">#BFE53935</item>
+    </style>
+
+    <style name="greenLinearTheme">
+        <item name="android:background">#BF7CB342</item>
+    </style>
+</resources>
