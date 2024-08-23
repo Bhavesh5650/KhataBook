@@ -11,9 +11,10 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.khatabook.R
 import com.example.khatabook.databinding.SpinnerSampleLayoutBinding
-import com.example.khatabook.model.BookEntity
+import com.example.khatabook.model.UserEntity
 
-class SpinnerAdapter(private var list:MutableList<BookEntity>) : BaseAdapter() {
+
+class SpinnerAdapter(private var list:MutableList<UserEntity>) : BaseAdapter() {
 
     override fun getCount(): Int {
         return list.size

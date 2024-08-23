@@ -9,7 +9,7 @@ import com.example.khatabook.R
 import com.example.khatabook.databinding.ActivityAddUserBinding
 import com.example.khatabook.helper.BookHelper
 import com.example.khatabook.helper.BookHelper.Companion.initBookDB
-import com.example.khatabook.model.BookEntity
+import com.example.khatabook.model.UserEntity
 
 class AddUserActivity : AppCompatActivity() {
 
@@ -43,12 +43,33 @@ class AddUserActivity : AppCompatActivity() {
 
             val userName = binding.userNameEdt.text.toString()
             val userMobile = binding.userMobileEdt.text.toString()
+            val userFlat = binding.setUserFlatNo.text.toString()
+            val userArea = binding.setUserArea.text.toString()
+            val userPin = binding.setUserPincode.text.toString()
+            val userCity = binding.setUserCity.text.toString()
+            val userState = binding.setUserState.text.toString()
 
-            val model = BookEntity(userName = userName, userMobile = userMobile)
+            if(userName.isEmpty())
+            {
+                binding.nameLayout.isErrorEnabled = true
+                binding.nameLayout.error = "User's Name Required"
+            }
+            else if(userMobile.isEmpty())
+            {
+                binding.mobileLayout.isErrorEnabled = true
+                binding.mobileLayout.error = "User's Mobile No. Required"
+            }
+            else
+            {
+                binding.nameLayout.isErrorEnabled = false
+                binding.mobileLayout.isErrorEnabled = false
 
-            initBookDB(this).userDAO().userInsert(model)
+                val model = UserEntity(userName = userName, userMobile = userMobile, userFlat = userFlat, userArea = userArea, userPin = userPin, userCity = userCity, userState = userState)
+                initBookDB(this).userDAO().userInsert(model)
 
-            finish()
+                finish()
+            }
+
         }
     }
 }

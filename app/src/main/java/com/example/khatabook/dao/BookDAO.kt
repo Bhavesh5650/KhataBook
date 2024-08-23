@@ -5,23 +5,23 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.example.khatabook.model.BookEntity
 import com.example.khatabook.model.ProductEntity
+import com.example.khatabook.model.UserEntity
 
 @Dao
 interface BookDAO {
 
     @Insert
-    fun userInsert(model:BookEntity)
+    fun userInsert(model:UserEntity)
 
     @Update
-    fun userUpdate(model: BookEntity)
+    fun userUpdate(model: UserEntity)
 
     @Delete
-    fun userDelete(model: BookEntity)
+    fun userDelete(model: UserEntity)
 
     @Query("SELECT * FROM User")
-    fun userRead() : MutableList<BookEntity>
+    fun userRead() : MutableList<UserEntity>
 
 
     @Insert

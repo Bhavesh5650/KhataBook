@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.khatabook.R
 import com.example.khatabook.databinding.AddUserLayoutBinding
-import com.example.khatabook.model.BookEntity
+import com.example.khatabook.model.UserEntity
 
-class UserAdapter(private var userList:MutableList<BookEntity>) : Adapter<UserAdapter.UserViewHolder>() {
+class UserAdapter(private var userList:MutableList<UserEntity>) : Adapter<UserAdapter.UserViewHolder>() {
 
     class UserViewHolder(itemView: View) : ViewHolder(itemView){
 
@@ -29,10 +29,13 @@ class UserAdapter(private var userList:MutableList<BookEntity>) : Adapter<UserAd
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         holder.binding.setUserName.text = userList[position].userName
         holder.binding.setUserMobile.text = userList[position].userMobile
+        holder.binding.userBackground.setOnClickListener {
+
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun dataChange(list:MutableList<BookEntity>)
+    fun dataChange(list:MutableList<UserEntity>)
     {
         userList = list
         notifyDataSetChanged()

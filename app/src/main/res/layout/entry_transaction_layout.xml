@@ -1,69 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    app:cardCornerRadius="10dp"
-    android:id="@+id/setBackColorEntry"
-    android:layout_height="wrap_content">
+    android:orientation="horizontal"
+    app:cardCornerRadius="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:padding="12dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:padding="12dp">
 
         <TextView
             android:id="@+id/setRvProName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
             android:text="Product Name"
-            android:layout_marginStart="5dp"
             android:textSize="22sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <LinearLayout
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="15dp"
                 android:text="Quantity : "
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/setRvProQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Qua"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:text="Qua"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:text="Price : "
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:text="Price : "/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/setRvProPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Price"
-                android:textStyle="bold"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/setBackColorEntry"
+        android:layout_width="20dp"
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,11 +78,11 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginEnd="5dp"
-            android:textSize="20sp"
+            android:layout_weight="1"
+            android:text="₹"
             android:textAlignment="textEnd"
-            android:text="₹"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/setRvTotalAmount"
@@ -86,9 +90,9 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
             android:text="Amount"
+            android:textAlignment="textEnd"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="textEnd"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

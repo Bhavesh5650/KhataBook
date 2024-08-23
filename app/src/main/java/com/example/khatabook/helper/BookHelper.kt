@@ -5,10 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.khatabook.dao.BookDAO
-import com.example.khatabook.model.BookEntity
 import com.example.khatabook.model.ProductEntity
+import com.example.khatabook.model.UserEntity
 
-@Database(entities = [BookEntity::class,ProductEntity::class] , version = 1)
+@Database(entities = [UserEntity::class,ProductEntity::class] , version = 1)
 abstract class BookHelper : RoomDatabase()
 {
 

@@ -10,12 +10,12 @@ import com.example.khatabook.R
 import com.example.khatabook.adapter.UserAdapter
 import com.example.khatabook.databinding.FragmentUserBinding
 import com.example.khatabook.helper.BookHelper.Companion.initBookDB
-import com.example.khatabook.model.BookEntity
+import com.example.khatabook.model.UserEntity
 
 class UserFragment(private var context1: Context) : Fragment() {
 
     private var userAdapter:UserAdapter?=null
-    private var userList = mutableListOf<BookEntity>()
+    private var userList = mutableListOf<UserEntity>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +35,11 @@ class UserFragment(private var context1: Context) : Fragment() {
         userList = db.userDAO().userRead()
         userAdapter!!.dataChange(userList)
         super.onResume()
+    }
+
+    fun fullDetail()
+    {
+
     }
 
 }
