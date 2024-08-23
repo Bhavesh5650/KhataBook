@@ -25,5 +25,7 @@ data class ProductEntity(
     @ColumnInfo
     val proPrice:String,
     @ColumnInfo
-    val proTotalAmount:String
+    val proTotalAmount:String,
+    @ColumnInfo
+    val payStatus:Int,
 )

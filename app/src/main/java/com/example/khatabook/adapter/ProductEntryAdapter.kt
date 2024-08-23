@@ -31,6 +31,15 @@ class ProductEntryAdapter(private var entryList:MutableList<ProductEntity>) : Ad
         holder.pBinding.setRvProQuantity.text = entryList[position].proQuantity
         holder.pBinding.setRvProPrice.text = entryList[position].proPrice
         holder.pBinding.setRvTotalAmount.text = entryList[position].proTotalAmount
+        if(entryList[position].payStatus == 1)
+        {
+            holder.pBinding.setBackColorEntry.setCardBackgroundColor(holder.itemView.context.getColor(R.color.green))
+        }
+        else
+        {
+            holder.pBinding.setBackColorEntry.setCardBackgroundColor(holder.itemView.context.getColor(R.color.red))
+        }
+
     }
 
     @SuppressLint("NotifyDataSetChanged")

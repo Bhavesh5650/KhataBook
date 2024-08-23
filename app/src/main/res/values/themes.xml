@@ -23,4 +23,8 @@
     <style name="greenLinearTheme">
         <item name="android:background">#BF7CB342</item>
     </style>
+
+    <style name="textColor">
+        <item name="android:textColor">#ffffff</item>
+    </style>
 </resources>

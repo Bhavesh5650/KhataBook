@@ -19,6 +19,7 @@ class AddEntryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddEntryBinding
     private var list = mutableListOf<BookEntity>()
+    var payment:Int=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +34,7 @@ class AddEntryActivity : AppCompatActivity() {
 
         setSpinner()
         insertEntry()
+        setPaymentStatus()
 
         binding.spinner2.onItemSelectedListener= object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(
@@ -69,12 +71,29 @@ class AddEntryActivity : AppCompatActivity() {
             val proQuantity = binding.setProductQuantity.text.toString()
             val proPrice = binding.setProductPrice.text.toString()
             val totalAmount = binding.setTotalAmount.text.toString()
+            setPaymentStatus()
 
-            val productEntity = ProductEntity(proName = proName, proQuantity = proQuantity, proPrice = proPrice, proTotalAmount = totalAmount)
+            val productEntity = ProductEntity(proName = proName, proQuantity = proQuantity, proPrice = proPrice, proTotalAmount = totalAmount, payStatus = payment)
 
             initBookDB(this).userDAO().productInsert(productEntity)
 
             finish()
+        }
+    }
+
+    private fun setPaymentStatus()
+    {
+        binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+
+            when(checkedId)
+            {
+                R.id.radioDebit -> {
+                    payment = 1
+                }
+                R.id.radioCredit -> {
+                    payment = 2
+                }
+            }
         }
     }
 }
