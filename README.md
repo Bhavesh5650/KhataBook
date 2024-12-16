@@ -86,15 +86,15 @@ Add screenshots to visualize the app's key functionalities:
 
 <p>
   <image src = "https://github.com/user-attachments/assets/7ecc0422-6e32-4927-92aa-4fc8bb90b170" width="220px"/>
-  <image src = "https://github.com/user-attachments/assets/3241d22f-2e55-488b-9431-1448642b4430" width="220px"/>
-  <image src = "https://github.com/user-attachments/assets/cc5320ba-c3e6-43ba-9547-657cd491ad96" width="220px"/>
+  <image src = "https://github.com/user-attachments/assets/a65ff380-8d2b-4cac-867c-b69538104abf" width="220px"/>
+  <image src = "https://github.com/user-attachments/assets/520219ca-579d-42f3-991a-e82cdcf28a7a" width="220px"/>
 </p>
 
 <p>
-  <image src = "https://github.com/user-attachments/assets/2dceea46-244c-4806-a0f7-f7968a20ba64" width="220px"/>
-  <image src = "https://github.com/user-attachments/assets/ca2e5c5c-2388-4e30-973e-82171ece81de" width="220px"/>
-  <image src = "https://github.com/user-attachments/assets/5619f9d6-77ed-478a-a4c8-18868d45d6b3" width="220px"/>
-  <image src = "https://github.com/user-attachments/assets/52ed62d7-adeb-45da-b0c3-45b3c8eb3a1a" width="220px"/>
+  <image src = "https://github.com/user-attachments/assets/89b50fa1-f181-44f5-91ab-b987fb4cc4ed" width="220px"/>
+  <image src = "https://github.com/user-attachments/assets/335b997a-fa7a-4fc1-a2eb-1997da5a50c9" width="220px"/>
+  <image src = "https://github.com/user-attachments/assets/375b31a5-1e6d-4ee9-a3cb-f1887642749b" width="220px"/>
+  <image src = "https://github.com/user-attachments/assets/a346d38c-a199-4e64-95fa-7b089d7a8adc" width="220px"/>
 </p>
 
 
